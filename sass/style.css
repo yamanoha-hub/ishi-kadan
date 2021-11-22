@@ -1,0 +1,246 @@
+@charset "UTF-8";
+body {
+  font-family: “Times New Roman”, “游明朝”, “Yu Mincho”, “游明朝体”, “YuMincho”, “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, “HiraMinProN-W3”, “HGS明朝E”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  color: #000;
+  background: #FFF;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  opacity: 0.6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+.top-bg {
+  background-image: url(../images/mainbg01.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.av180 {
+  letter-spacing: 0.18em;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  color: #fff;
+}
+
+.header__inner {
+  max-width: 1920px;
+  height: 80px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo h1 {
+  margin-left: 15px;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__nav__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.header__nav__item li > a {
+  color: #fff;
+}
+
+.mv {
+  height: 1079px;
+  max-width: 100%;
+}
+
+.plan {
+  padding-top: 60px;
+  padding-bottom: 136px;
+  background-image: url(../images/plan-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.plan__inner {
+  max-width: 1920px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.plan__inner .section__ttl {
+  text-align: center;
+}
+
+.plan__inner .section__ttl h2 {
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+.plan .cards {
+  margin-top: 66px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.plan .cards .card {
+  position: relative;
+}
+
+.plan .cards .card h3 {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: 26px;
+}
+
+.plan .cards .card p {
+  font-size: 16px;
+  line-height: 2;
+  margin-top: 22px;
+}
+
+.plan .cards .card:nth-child(1) p {
+  position: absolute;
+  left: -3px;
+}
+
+.plan .cards .card:nth-child(2) {
+  margin-right: 94px;
+  margin-left: 94px;
+}
+
+.footer__bg {
+  background-image: url(../images/footer-bg.png);
+}
+
+.footer__inner {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 64px;
+  padding-bottom: 61px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__list {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
+.footer__list__item {
+  font-size: 18px;
+}
+
+.footer__list__item a {
+  color: #000;
+  border: none;
+  letter-spacing: 14px;
+}
+
+.footer__list__item:nth-child(2) {
+  margin-right: 34px;
+  margin-left: 34px;
+}
+
+.footer__logo {
+  text-align: center;
+  margin-top: 82px;
+}
+
+.footer__logo__ttl {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.footer__address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 2px;
+  margin-top: 72px;
+}
+
+.footer__address .yubin {
+  margin-right: 21px;
+}
+
+.footer__connecting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 5px;
+  margin-top: 23px;
+}
+
+.footer__connecting .tel {
+  margin-right: 20px;
+}
+
+.copyright {
+  height: 60px;
+  text-align: center;
+  background-color: #000;
+}
+
+.copyright small {
+  color: #fff;
+  line-height: 60px;
+  font-size: 12px;
+}
+/*# sourceMappingURL=style.css.map */

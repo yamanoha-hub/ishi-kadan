@@ -1,0 +1,25 @@
+{
+  "name": "ishi-kadan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamanoha-hub/ishi-kadan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yamanoha-hub/ishi-kadan/issues"
+  },
+  "homepage": "https://github.com/yamanoha-hub/ishi-kadan#readme"
+}
