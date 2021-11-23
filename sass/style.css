@@ -42,8 +42,34 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
 }
 
+.menu-bg {
+  background-image: url(../images/menu-header.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.spa-bg {
+  background-image: url(../images/onsen-header.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .av180 {
   letter-spacing: 0.18em;
+}
+
+.ml6 {
+  margin-left: 6px;
+}
+
+.ml1 {
+  margin-left: 1px;
+}
+
+.ml2 {
+  margin-left: 2px;
 }
 
 .header {
@@ -149,6 +175,53 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-size: 32px;
   letter-spacing: 8px;
+}
+
+.about-us {
+  padding-top: 64px;
+  background-image: url(../images/bg.png);
+  height: 681px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 43px;
+}
+
+.about-us__inner {
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
+.about-us__heading {
+  font-size: 28px;
+  letter-spacing: 14px;
+}
+
+.about-us__heading h2:nth-child(2) {
+  margin-top: 85px;
+  margin-right: 33px;
+}
+
+.about-us__text {
+  margin-top: 85px;
+  margin-right: 118px;
+  margin-left: 118px;
+  letter-spacing: 6px;
+  text-orientation: upright;
+}
+
+.about-us__text > p:nth-child(2) {
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+.about-us span {
+  margin-top: 379px;
+  font-size: 22px;
+  letter-spacing: 10px;
 }
 
 .media-contents {
@@ -514,17 +587,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-header {
-  background-color: #fff;
-}
-
-.sub-header__inner {
-  max-width: 1920px;
-  margin-right: auto;
-  margin-left: auto;
-  color: #000;
-}
-
-.sub-header {
   position: fixed;
   width: 100%;
   background-color: #fff;
@@ -557,7 +619,6 @@ h1, h2, h3, h4, h5, h6 {
 .sub-header__logo h1 {
   font-size: 32px;
   margin-left: 15px;
-  color: #000;
 }
 
 .sub-header__nav {
@@ -573,29 +634,29 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
 }
 
-.sub-header__nav__item li > a {
-  color: #000;
-}
-
 .sub-header__nav:nth-child(2) li {
   margin-right: 30px;
 }
 
-.sub-header .btn {
+.sub-header .btn-modal {
   margin-left: auto;
   color: #fff;
   background: #978F10;
-  max-width: 170px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: inline-block;
-  max-width: 100%;
-  padding: 20px 20px;
-  font-size: 1rem;
-  text-align: center;
+  width: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 19px;
+  padding-bottom: 19px;
 }
 
-.sub-header .btn p {
+.sub-header .btn-modal p {
   margin-left: 10px;
 }
 
@@ -615,5 +676,79 @@ h1, h2, h3, h4, h5, h6 {
 .sub-visual__heading {
   color: #fff;
   font-size: 34px;
+}
+
+.sub-contents {
+  padding-top: 37px;
+  max-width: 1180px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.sub-contents__message {
+  margin-top: 90px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.sub-contents .box {
+  padding-top: 70px;
+  padding-bottom: 66px;
+}
+
+.sub-contents .box__content {
+  position: relative;
+  margin-bottom: 222px;
+}
+
+.sub-contents .box__content__text {
+  background-image: url(../images/bg.png);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 813px;
+  height: 381px;
+  padding-top: 60px;
+  padding-left: 238px;
+  z-index: -1;
+  position: absolute;
+  top: 57px;
+  right: 0;
+}
+
+.sub-contents .box__content__text h2 {
+  font-size: 24px;
+}
+
+.sub-contents .box__content__text p {
+  margin-top: 44px;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.sub-contents .box__content__text .note {
+  margin-top: 40.5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.sub-contents .box__content:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.sub-contents .box__content:nth-child(2) .box__content__text {
+  padding-left: 60px;
+  left: 0;
+}
+
+.breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */
