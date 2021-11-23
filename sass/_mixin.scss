@@ -8,3 +8,19 @@
   }
 }
 
+// @mixin btnSe {
+  // display: inline-block;
+  // max-width: 100%;
+  // padding: 18px 37px;
+  // padding: 10px 20px;
+  // font-size: 1rem;
+// }
+
+@mixin btnSet {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  padding: 20px 20px;
+  font-size: 1rem;
+  text-align: center;
+}

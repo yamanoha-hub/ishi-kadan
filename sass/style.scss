@@ -39,6 +39,13 @@ h1,h2,h3,h4,h5,h6 {
   background-repeat: no-repeat;
 }
 
+.room-bg {
+  background-image: url(../images/oheya-header.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .av180 {
   letter-spacing: 0.18em;
 }
@@ -48,6 +55,7 @@ h1,h2,h3,h4,h5,h6 {
 // 変数
 // ========================================================================
 $font-color: #000;
+
 
 // ============================================
 // メディアクエリ
@@ -64,16 +72,15 @@ $breakpoints: (
 
 
 .header {
-  background: rgba(0, 0, 0, 0);
   position: fixed;
-  color: #fff;
+  width: 100%;
+  z-index: 1000;
   &__inner {
-    max-width: 1920px;
     height: 80px;
-    padding-right: 20px;
-    padding-left: 20px;
     margin-right: auto;
     margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
   }
@@ -81,31 +88,119 @@ $breakpoints: (
     display: flex;
     align-items: center;
     h1 {
+      font-size: 32px;
       margin-left: 15px;
+      color: #FFF;
     }
   }
 
   &__nav {
     display: flex;
+    margin-left: 120px;
     &__item {
       display: flex;
-      align-self: flex-end;
       li > a {
         color: #fff;
       }
     }
+    &:nth-child(2) li {
+      margin-right: 30px;
+    }
   }
 
+  .btn-modal {
+    margin-left: auto;
+    color: #fff;
+    background: #978F10;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    p {
+      margin-left: 10px;
+    }
+  }
 }
 
+
+// メインビジュアル
 .mv {
+  padding-top: 362px;
+  padding-right: 508px;
+  box-sizing: border-box;
   height: 1079px;
   max-width: 100%;
+  &__inner {
+    max-width: 1920px;
+    margin-left: auto;
+    writing-mode: vertical-rl;
+  }
+  &__heading {
+    margin-left: 50px;
+  }
+  h2 {
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: 8px;
+  }
+}
+// メインビジュアル
+
+
+// メディア
+.media-contents {
+  padding-top: 106px;
+  padding-bottom: 78px;
+  &__inner {
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
+.media {
+  display: flex;
+  img {
+    width: 1050px;
+  }
+  &__body {
+    margin-left: 137px;
+    &__ttl {
+      font-size: 36px;
+      line-height: 1.7222222;
+      margin-top: 32px - 13px;
+    }
+    &__text {
+      font-size: 16px;
+      line-height: 2;
+      margin-top: 75px - 13px - 8px;
+    }
+    .btn {
+      margin-top: 75px - 8px;
+      border: solid 1px #707070;
+      width: 200px;
+      @include btnSet;
+    }
+  }
+
+  &:nth-child(2) {
+    flex-direction: row-reverse;
+    margin-top: 122px;
+    margin-bottom: 122px;
+    .media__body {
+      margin-right: 174px;
+      margin-left: 0;
+      .btn {
+        margin-top: 43px - 8px;
+      }
+    }
+  }
 
 
-
+}
+// メディア
 
 
 // プラン
@@ -153,14 +248,111 @@ $breakpoints: (
 }
 // プラン
 
+// お知らせ
+.news {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  &__inner {
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+    @include section-ttl;
+  }
+
+  &__tab {
+    margin-top: 46px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    li {
+      cursor: pointer;
+    }
+    li:nth-child(1) {
+      width: 69px;
+      margin-right: 53px;
+    }
+  }
+
+  &__contents {
+    margin-top: 49px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 3px;
+    &__item {
+      width: 570px;
+      max-height: 130px;
+      box-sizing: border-box;
+      background-color: #F6F6F6;
+      padding-top: 15px;
+      padding-left: 10px;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      img {
+        margin-right: 30px;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 2;
+      }
+      &:nth-child(odd) {  //奇数選択
+        margin-right: 46px;
+      }
+    }
+  }
+}
+// お知らせ
 
 
+// アクセス
+.access {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-image: url(../images/bg.png);
+  &__inner {
+    @include section-ttl;
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__content {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 84px;
+    margin-bottom: 69px;
+    display: flex;
+    justify-content: center;
+
+    &__text {
+      margin-left: 83px;
+      padding-top: 20px - 8px;
+      font-size: 16px;
+      line-height: 2;
+      span {
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .google-map {
+    padding-right: 4px;
+  }
+}
 
 
+// アクセス
 
 
-
-
+// フッター
 .footer__bg {
   background-image: url(../images/footer-bg.png);
 }
@@ -228,3 +420,98 @@ $breakpoints: (
     font-size: 12px;
   }
 }
+// フッター
+
+
+
+
+
+
+
+
+
+
+// サブヘッダー
+.sub-header {
+  background-color: #fff;
+  &__inner {
+    max-width: 1920px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #000;
+  }
+}
+
+.sub-header {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  &__inner {
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    h1 {
+      font-size: 32px;
+      margin-left: 15px;
+      color: #000;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    margin-left: 120px;
+    &__item {
+      display: flex;
+      li > a {
+        color: #000;
+      }
+    }
+    &:nth-child(2) li {
+      margin-right: 30px;
+    }
+  }
+
+  .btn {
+    margin-left: auto;
+    color: #fff;
+    background: #978F10;
+    max-width: 170px;    
+    @include btnSet;
+
+    p {
+      margin-left: 10px;
+    }
+  }
+}
+
+// サブヘッダー
+
+// サブビジュアル
+.sub-visual {
+  // margin-top: 80px;
+  &__inner {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__heading {
+    color: #fff;
+    font-size: 34px;
+  }
+}
+
+
+// サブビジュアル
+
+
+
