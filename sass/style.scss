@@ -24,6 +24,7 @@ a:hover {
 
 img {
   max-width: 100%;
+  object-fit: cover;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -149,33 +150,26 @@ $breakpoints: (
 // ヘッダー
 
 // メインビジュアル
-
 .mv {
   height: 1079px;
-  overflow: hidden;
-  // max-width: 100%;
-  &__inner {
-    overflow: hidden;
+  max-width: 100%;
+  // &__inner {
     // max-width: 1920px;
-    // margin-left: auto;
-  }
+  // }
   &__text {
-    overflow: hidden;
-    padding-top: 362px;
-    // padding-left: 1293px;
     color: #fff;
+    writing-mode: vertical-rl;
     font-size: 32px;
     letter-spacing: 8px;
     position: absolute;
-    writing-mode: vertical-rl;
+    top: 362px;
+    right: 508px;
     z-index: 10;
     .mv__heading {
       margin-left: 50px;
     }
   }
 }
-
-
 
 // swiper
 @keyframes zoomUp {
@@ -193,21 +187,16 @@ $breakpoints: (
 }
 .swiper {
   width: 100%;
-  // max-width: 500px;
-  overflow: hidden;
   height: 1079px;
-  &-slide {
-    overflow: hidden;
-  }
 }
 
 
 //  imgタグだと下に隙間ができるのでblockに。
 .slide-img img{
   display: block;
+  height: 1079px;
   width: 100%;
-  height: auto;
-  overflow: hidden;
+  object-fit: cover;
 }
 // swiper
 

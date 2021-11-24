@@ -22,6 +22,8 @@ a:hover {
 
 img {
   max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -156,23 +158,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .mv {
   height: 1079px;
-  overflow: hidden;
-}
-
-.mv__inner {
-  overflow: hidden;
+  max-width: 100%;
 }
 
 .mv__text {
-  overflow: hidden;
-  padding-top: 362px;
   color: #fff;
-  font-size: 32px;
-  letter-spacing: 8px;
-  position: absolute;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
+  font-size: 32px;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 362px;
+  right: 508px;
   z-index: 10;
 }
 
@@ -211,19 +209,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .swiper {
   width: 100%;
-  overflow: hidden;
   height: 1079px;
-}
-
-.swiper-slide {
-  overflow: hidden;
 }
 
 .slide-img img {
   display: block;
+  height: 1079px;
   width: 100%;
-  height: auto;
-  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .about-us {
