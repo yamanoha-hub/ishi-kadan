@@ -70,6 +70,9 @@ h1,h2,h3,h4,h5,h6 {
   margin-left: 2px;
 }
 
+.active {
+  display: block;
+}
 
 // ========================================================================
 // 変数
@@ -146,28 +149,69 @@ $breakpoints: (
 // ヘッダー
 
 // メインビジュアル
+
 .mv {
-  padding-top: 362px;
-  padding-right: 508px;
-  box-sizing: border-box;
   height: 1079px;
-  max-width: 100%;
+  overflow: hidden;
+  // max-width: 100%;
   &__inner {
-    max-width: 1920px;
-    margin-left: auto;
-    writing-mode: vertical-rl;
+    overflow: hidden;
+    // max-width: 1920px;
+    // margin-left: auto;
   }
-  &__heading {
-    margin-left: 50px;
-  }
-  h2 {
+  &__text {
+    overflow: hidden;
+    padding-top: 362px;
+    // padding-left: 1293px;
     color: #fff;
     font-size: 32px;
     letter-spacing: 8px;
+    position: absolute;
+    writing-mode: vertical-rl;
+    z-index: 10;
+    .mv__heading {
+      margin-left: 50px;
+    }
   }
 }
-// メインビジュアル
 
+
+
+// swiper
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+.swiper-slide-active .slide-img,
+.swiper-slide-duplicate-active .slide-img,
+.swiper-slide-prev .slide-img{
+  animation: zoomUp 10s linear 0s 1 normal both;  
+}
+.swiper {
+  width: 100%;
+  // max-width: 500px;
+  overflow: hidden;
+  height: 1079px;
+  &-slide {
+    overflow: hidden;
+  }
+}
+
+
+//  imgタグだと下に隙間ができるのでblockに。
+.slide-img img{
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+// swiper
+
+// メインビジュアル
 
 // アバウト
 .about-us {  //119 /2 = 60
@@ -211,8 +255,6 @@ $breakpoints: (
 
 }
 // アバウト
-
-
 
 // メディア
 .media-contents {
@@ -266,7 +308,6 @@ $breakpoints: (
 
 }
 // メディア
-
 
 // プラン
 .plan {
@@ -331,6 +372,7 @@ $breakpoints: (
     justify-content: center;
     li {
       cursor: pointer;
+      text-align: center;
     }
     li:nth-child(1) {
       width: 69px;
@@ -338,12 +380,19 @@ $breakpoints: (
     }
   }
 
+  .tab-active {
+    border-bottom: 1px solid #000;
+  }
+
   &__contents {
     margin-top: 49px;
+    max-width: 1186px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding-left: 3px;
+    margin-right: auto;
+    margin-left: auto;
     &__item {
       width: 570px;
       max-height: 130px;
@@ -362,14 +411,10 @@ $breakpoints: (
         font-size: 16px;
         line-height: 2;
       }
-      &:nth-child(odd) {  //奇数選択
-        margin-right: 46px;
-      }
     }
   }
 }
 // お知らせ
-
 
 // アクセス
 .access {
@@ -412,10 +457,7 @@ $breakpoints: (
     padding-right: 4px;
   }
 }
-
-
 // アクセス
-
 
 // フッター
 .footer__bg {
@@ -564,6 +606,11 @@ $breakpoints: (
 }
 // サブビジュアル
 
+// パンくず
+.breadcrumb {
+  display: flex;
+}
+// パンくず
 
 // サブコンテンツ
 .sub-contents {
@@ -621,18 +668,49 @@ $breakpoints: (
       }
     }
   }
+
+  .spa-detail {
+    margin-top: 6.5px;
+    margin-bottom: 96.5px;
+    border-top: 1px solid #E7E7E7;
+    border-bottom: 1px solid #E7E7E7;
+    padding-top: 95.5px;
+    padding-bottom: 74px;
+    &__inner {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    &__heading {
+      font-size: 26px;
+      text-align: center;
+      margin-bottom: 51.5px;
+    }
+    &__table {
+      width: 880px;
+      font-size: 15px;
+      line-height: 1.466666667;
+      margin-right: auto;
+      margin-left: auto;
+      &__text {
+        border-top: 1px solid #E7E7E7;
+        th {
+          text-align: left;
+          width: 220px;
+          font-weight: normal;
+        }
+        td {
+          padding-top: 14px;   
+          padding-bottom: 14px;
+        }
+        &:nth-child(3) {
+          border-bottom: 1px solid #E7E7E7;
+        }
+      }
+    }
+  }
+  
 }
 // サブコンテンツ
-
-
-
-
-// パンくず
-.breadcrumb {
-  display: flex;
-}
-
-// パンくず
 
 
 
