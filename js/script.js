@@ -2,10 +2,35 @@
 
 $(function() {
 
-  // ファーストビューアニメーション
-  
+  // ハンバーガー
+  $(".hamburger").click(function() {
+    $(this).toggleClass('hamburger__active');
+  });
 
 
+  // モーダル
+  $('.btn-modal').click(function() {
+    $('.modal').show();
+    return false;
+  });
+  $('.modal__contact__close').click(function() {
+    $('.modal').hide();
+    return false;
+  });
+
+
+  // ヘッダー表示
+  $(window).scroll(function () {
+    // .mv__textの高さを取得してheader_showに代入
+    var Header_show = $('#header-show').offset();
+
+    // header_showより、スクロールされていたら
+    if ($(this).scrollTop() > Header_show.top) {
+      $('header').fadeIn();
+    } else {
+      $('header').fadeOut(); 
+    }
+  });
 
   // タブをクリック
   $('.news__tab li').click(function() {

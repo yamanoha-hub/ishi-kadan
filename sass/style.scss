@@ -22,11 +22,6 @@ a:hover {
   transition: 0.5s;
 }
 
-img {
-  max-width: 100%;
-  object-fit: cover;
-}
-
 h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
 }
@@ -85,7 +80,8 @@ $font-Color: #000;
 // メディアクエリ
 // ============================================
 $breakpoints: (
-  m: "screen and (max-width: 1100px)", //タブレット
+  l: "screen and (max-width: 1600px)", //PC
+  m: "screen and (max-width: 1280px)", //タブレット
   s: "screen and (max-width: 599px)",  //スマートフォン
 );
 @mixin media($breakpoint) {
@@ -94,12 +90,24 @@ $breakpoints: (
   }
 }
 
+
+
+// 表示崩れ見るため
+// * {
+  // outline: 2px solid blue;
+// }
+
+
+
 // ヘッダー
 .header {
+  display: none;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1000;
   &__inner {
+    max-width: 1920px;
     height: 80px;
     margin-right: auto;
     margin-left: auto;
@@ -132,6 +140,10 @@ $breakpoints: (
     }
   }
 
+  .hamburger {
+    @include hamburgerMenu;
+  }
+
   .btn-modal {
     margin-left: auto;
     color: #fff;
@@ -146,16 +158,135 @@ $breakpoints: (
       margin-left: 10px;
     }
   }
+
+  @include media(m) {
+    &__inner {
+      height: 60px;
+    }
+
+    &__logo h1 {
+      font-size: 28px;
+      margin-left: 10px;      
+    }
+    &__nav {
+      margin-left: 50px;
+      &:nth-child(2) li {
+        margin-right: 15px;
+      }
+    }
+    .btn-modal {
+      width: 150px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      p {
+        margin-left: 10px;
+      }
+    }
+
+  }
+  @include media(s) {
+    .header__nav {
+      display: none;
+    }
+  }
 }
 // ヘッダー
 
+
+// モーダル
+.modal {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #707070;
+  z-index: 1000;
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-top: 3px;
+  }
+  &__contact {
+    position: relative;
+    width: 550px;
+    height: 600px;
+    background-color: #fff;
+    border: 1px solid #707070;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__close::before , &__close::after {
+      content: "";
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      width: 3px;
+      height: 25.5px;
+      background-color: #000;
+      cursor: pointer;
+    }
+    &__close::before {
+      transform: translate(-50%,-50%) rotate(45deg);
+    } 
+    &__close::after {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+
+    &__heading {
+      margin-top: 29px;
+      margin-bottom: 29.5px;
+      font-size: 20px;
+    }
+  }
+
+  .form {
+    width: 429px;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: 1px solid #E7E7E7;
+    padding-top: 35.5px;
+    padding-bottom: 90px;
+    input, select {
+      box-sizing: border-box;
+      color: #797878;
+      padding-left: 10px;
+      height: 32px;
+      width: 100%;
+      border: 1px solid #E7E7E7;
+    }
+    &__name, &__mail, &__plan, &__date {
+      margin-bottom: 14px;
+      h3 {
+        margin-bottom: 14px;
+      }
+    }
+    input[type="submit"] {
+      margin-top: 50px;
+      width: 198px;
+      height: 42px;
+      border: 1px solid #707070;
+      font-size: 16px;
+      color: #000;
+      background-color: #fff;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;      
+    }
+
+  }
+}
+// モーダル
+
+
 // メインビジュアル
 .mv {
-  height: 1079px;
-  max-width: 100%;
-  // &__inner {
-    // max-width: 1920px;
-  // }
+  max-height: 1079px;
   &__text {
     color: #fff;
     writing-mode: vertical-rl;
@@ -186,24 +317,22 @@ $breakpoints: (
   animation: zoomUp 10s linear 0s 1 normal both;  
 }
 .swiper {
-  width: 100%;
-  height: 1079px;
-}
-
-
-//  imgタグだと下に隙間ができるのでblockに。
-.slide-img img{
-  display: block;
-  height: 1079px;
-  width: 100%;
-  object-fit: cover;
+  max-height: 1079px;
+  max-width: 1920px;
+  img {
+    display: block;
+    // width: 100%;
+    // height: 1079px;
+    object-fit: cover;
+    overflow: hidden;
+  }
 }
 // swiper
-
 // メインビジュアル
 
+
 // アバウト
-.about-us {  //119 /2 = 60
+.about-us {
   padding-top: 64px;
   background-image: url(../images/bg.png);
   height: 681px;
@@ -235,15 +364,64 @@ $breakpoints: (
       margin-left: 22px;
     }
   }
-  span {
+  &__site-ttl {
     margin-top: 379px;
     font-size: 22px;
     letter-spacing: 10px;
   }
 
-
+  @include media(m) {
+    padding-top: 50px;
+    max-height: 100%;
+    &__inner {
+      max-width: 600px;
+      writing-mode: horizontal-tb;
+      h2:nth-child(2) {
+        margin-top: 30px;
+        margin-right: 0;
+      }
+    }
+    &__text {
+      margin-top: 60px;
+      margin-left: 80px;
+      margin-right: 0;
+      line-height: 1.5;
+      &>p:nth-child(2) {
+        margin-right: 0px;
+        margin-left: 0px;
+      }
+    }
+    &__site-ttl {
+      margin-top: 90px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  @include media(s) {
+    padding-top: 20px;
+    padding-left: 20px;
+    &__inner {
+      max-width: 450px;
+    }
+    &__heading {
+      margin-top: 20px;
+      letter-spacing: 1px;
+      h2:nth-child(2) {
+        margin-top: 10px;
+      }
+    }
+    &__text {
+      margin-top: 40px;
+      margin-left: 20px;
+      letter-spacing: 4px;
+    }
+    &__site-ttl {
+      margin-top: 70px;
+    }
+  }
 }
 // アバウト
+
 
 // メディア
 .media-contents {
@@ -257,12 +435,15 @@ $breakpoints: (
 }
 
 .media {
+  height: 545px;
   display: flex;
   img {
-    width: 1050px;
+    max-width: 100%;
+    object-fit: cover;
   }
   &__body {
     margin-left: 137px;
+    margin-right: 10px;
     &__ttl {
       font-size: 36px;
       line-height: 1.7222222;
@@ -287,16 +468,85 @@ $breakpoints: (
     margin-bottom: 122px;
     .media__body {
       margin-right: 174px;
-      margin-left: 0;
+      margin-left: 10px;
       .btn {
         margin-top: 43px - 8px;
       }
     }
   }
 
+  @include media(l) {
+    img {
+      max-width: 65%;
+    }
+    &__body {
+      margin-left: 30px;
+    }
+    &:nth-child(2) {
+      img {
+        max-width: 70%;
+      }
+      .media__body {
+        margin-right: 30px;
+      }
+    }
+  }
 
+  @include media(m) {
+    height: auto;
+    flex-direction: column;
+    position: relative;
+    img {
+      position: relative;
+      margin-right: 5px;
+      margin-left: 5px;
+      max-width: 100%;
+      height: 500px;
+    }
+    .media__body {
+      margin-left: 50px;
+      position: absolute;
+      color: #fff;
+      .btn {
+        margin-top: 50px;
+        color: #fff;
+        width: 200px;
+        @include btnSet;
+      }
+    }
+    &:nth-child(2) {
+      flex-direction: column;
+      position: relative;
+      img {
+        max-width: 100%;
+      }
+      .media__body {
+        margin-right: 0;
+        margin-left: 50px;
+        position: absolute;
+      }
+    }
+  } 
+
+  @include media(s) {
+    .media__body {
+      margin-left: 20px;
+      &__ttl {
+        font-size: 28px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      .media__body { 
+        margin-left: 20px;
+      }
+    }
+  }
 }
 // メディア
+
 
 // プラン
 .plan {
@@ -314,12 +564,14 @@ $breakpoints: (
   }
 
   .cards {
+    max-width: 1181px;
     margin-top: 66px;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
     .card {
-      position: relative;
       h3 {
         font-size: 20px;
         line-height: 1.6;
@@ -331,17 +583,28 @@ $breakpoints: (
         margin-top: 36px - 6px - 8px;
       }
       &:nth-child(1) p {
-        position: absolute;
-        left: -3px;
+        margin-left: -3px;
       }
-      &:nth-child(2) {
-        margin-right: 94px;
-        margin-left: 94px;
+    }
+  }
+  @include media(m) {
+    .cards {
+      justify-content: space-around;
+      flex-wrap: wrap;
+      &__item {
+        margin-top: 30px;
       }
+    }
+  }
+  @include media(s) {
+    .cards {
+      flex-direction: column;
+      align-items: center;
     }
   }
 }
 // プラン
+
 
 // お知らせ
 .news {
@@ -401,9 +664,19 @@ $breakpoints: (
         line-height: 2;
       }
     }
+
+    @include media(m) {
+      justify-content: center;
+      &__item {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+
+    }
   }
 }
 // お知らせ
+
 
 // アクセス
 .access {
@@ -444,9 +717,42 @@ $breakpoints: (
 
   .google-map {
     padding-right: 4px;
+
+    @include media(m) {
+      padding-right: 0;
+      width: 600px;
+      height: 400px;
+    }
+    @include media(s) {
+      width: 350px;
+      height: 350px;
+    }
   }
+
+
+  @include media(m) {
+    &__content {
+      flex-direction: column;
+      // img {
+        // display: block;
+        // width: 600px;
+      // }
+      &__text {
+        margin-left: 0;
+      }
+    }
+  }
+  @include media(s) {
+    &__content {
+      img {
+        max-width: 500px;
+      }
+    }
+  }
+
 }
 // アクセス
+
 
 // フッター
 .footer__bg {
@@ -486,6 +792,9 @@ $breakpoints: (
       font-size: 32px;
       margin-top: 20px;
     }
+    @include media(m) {
+      margin-top: 30px;
+    }
   }
 
   &__address {
@@ -494,6 +803,9 @@ $breakpoints: (
     margin-top: 72px;
     .yubin {
       margin-right: 21px;
+    }
+    @include media(m) {
+      margin-top: 30px;
     }
   }
   
@@ -520,17 +832,11 @@ $breakpoints: (
 
 
 
-
-
-
-
-
-
-
 // サブヘッダー
 .sub-header {
   position: fixed;
   width: 100%;
+  display: none;
   background-color: #fff;
   z-index: 1000;
   &__inner {
@@ -580,8 +886,7 @@ $breakpoints: (
 // サブヘッダー
 
 // サブビジュアル
-.sub-visual {
-  // margin-top: 80px;
+.sv {
   &__inner {
     height: 500px;
     display: flex;
@@ -607,12 +912,20 @@ $breakpoints: (
   max-width: 1180px;
   margin-right: auto;
   margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  @include media(m) {
+    max-width: 800px;
+  }
   &__message {
     margin-top: 98px - 8px;
     text-align: center;
     font-size: 16px;
     line-height: 2;
   }
+
+
+
 
   .box {
     padding-top: 70px;
@@ -656,6 +969,19 @@ $breakpoints: (
         }
       }
     }
+    @include media(m) {
+      &__content {
+        img {
+          // z-index: -1;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &__text {
+          top: 0;
+        }
+      }
+    }
   }
 
   .spa-detail {
@@ -675,7 +1001,7 @@ $breakpoints: (
       margin-bottom: 51.5px;
     }
     &__table {
-      width: 880px;
+      max-width: 880px;
       font-size: 15px;
       line-height: 1.466666667;
       margin-right: auto;
@@ -697,7 +1023,6 @@ $breakpoints: (
       }
     }
   }
-  
 }
 // サブコンテンツ
 
