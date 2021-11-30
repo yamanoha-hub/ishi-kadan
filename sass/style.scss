@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-// モジュール
+// モジュール パーツ
 .top-bg {
   background-image: url(../images/mainbg01.png);
   background-size: cover;
@@ -70,10 +70,15 @@ h1,h2,h3,h4,h5,h6 {
   display: block;
 }
 
+
+
+
+
 // ========================================================================
 // 変数
 // ========================================================================
 $font-Color: #000;
+$color-wh: #fff;
 
 
 // ============================================
@@ -91,116 +96,29 @@ $breakpoints: (
 }
 
 
-
 // 表示崩れ見るため
-* {
-  outline: 2px solid blue;
-}
-
+// * {
+  // outline: 2px solid blue;
+// }
 
 
 // ヘッダー
 .header {
-  display: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  &__inner {
-    max-width: 1920px;
-    height: 80px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
+  @include header;
+  &__logo h1 {
+    color: $color-wh;
   }
-  &__logo {
-    display: flex;
-    align-items: center;
-    h1 {
-      font-size: 32px;
-      margin-left: 15px;
-      color: #FFF;
-    }
+  &__nav__item li a {
+    color: $color-wh;
   }
-
-  &__nav {
-    display: flex;
-    margin-left: 120px;
-    &__item {
-      display: flex;
-      li > a {
-        color: #fff;
-      }
-    }
-    &:nth-child(2) li {
-      margin-right: 30px;
-    }
-  }
-
   .hamburger {
     @include hamburgerMenu;
+    span {
+      background: #fff;
+    }
   }
-
   .btn-modal {
-    margin-left: auto;
-    color: #fff;
-    background: #978F10;
-    width: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 19px;
-    padding-bottom: 19px;
-    p {
-      margin-left: 10px;
-    }
-  }
-
-  @include media(m) {
-    &__inner {
-      height: 60px;
-    }
-    &__logo h1 {
-      font-size: 28px;
-      margin-left: 10px;      
-    }
-    &__nav {
-      margin-left: 50px;
-      &:nth-child(2) li {
-        margin-right: 15px;
-      }
-    }
-    .btn-modal {
-      width: 150px;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      p {
-        margin-left: 10px;
-      }
-    }
-  }
-  @include media(s) {
-    img {
-      width: 20px;
-    }
-    &__logo h1 {
-      font-size: 22px;
-      margin-left: 5px;      
-    }
-    .header__nav {
-      display: none;
-    }
-    .btn-modal {
-      width: 120px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      p {
-        margin-left: 5px;
-      }
-    }
+    @include btn-modal;
   }
 }
 // ヘッダー
@@ -301,7 +219,7 @@ $breakpoints: (
 .mv {
   max-height: 1079px;
   &__text {
-    color: #fff;
+    color: $color-wh;
     writing-mode: vertical-rl;
     font-size: 32px;
     letter-spacing: 8px;
@@ -481,7 +399,6 @@ $breakpoints: (
   @include media(s) {
     padding-top: 40px;
     padding-bottom: 40px;
-
   }
 }
 
@@ -557,11 +474,11 @@ $breakpoints: (
     .media__body {
       margin-left: 50px;
       position: absolute;
-      color: #fff;
+      color: $color-wh;
       text-shadow: 1px 2px 3px #000;
       .btn {
         margin-top: 50px;
-        color: #fff;
+        color: $color-wh;
         width: 200px;
         border: solid 1px #fff;
       }
@@ -743,7 +660,7 @@ $breakpoints: (
           padding-top: 5px;
           padding-right: 10px;
           padding-left: 10px;
-          color: #fff;
+          color: $color-wh;
           text-shadow: 1px 2px 3px #000;
         }
       }
@@ -846,7 +763,6 @@ $breakpoints: (
     &__item {
       font-size: 18px;
       a {
-        color: #000;
         border: none;
         letter-spacing: 14px;
       }
@@ -898,7 +814,7 @@ $breakpoints: (
   text-align: center;
   background-color: #000;
   small {
-    color: #fff;
+    color: $color-wh;
     line-height: 60px;
     font-size: 12px;
   }
@@ -909,104 +825,28 @@ $breakpoints: (
 
 // サブヘッダー
 .sub-header {
-  position: fixed;
-  width: 100%;
-  display: none;
-  background-color: #fff;
-  z-index: 1000;
-  &__inner {
-    height: 80px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
+  @include header;
+  background-color: $color-wh;
+  &__logo h1 {
+    color: $font-Color;
   }
-  &__logo {
-    display: flex;
-    align-items: center;
-    h1 {
-      font-size: 32px;
-      margin-left: 15px;
+  &__nav li a {
+    color: $font-Color;
+    @include media(s) {
+      color:$color-wh;
     }
   }
-
-  &__nav {
-    display: flex;
-    margin-left: 120px;
-    &__item {
-      display: flex;
-    }
-    &:nth-child(2) li {
-      margin-right: 30px;
-    }
-  }
-
-  .btn-modal {
-    margin-left: auto;
-    color: #fff;
-    background: #978F10;
-    width: 170px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 19px;
-    padding-bottom: 19px;
-    p {
-      margin-left: 10px;
-    }
-  }
-
   .hamburger {
     @include hamburgerMenu;
     span {
       background: #000;
     }
-  }
-
-  @include media(m) {
-    &__inner {
-      height: 60px;
-    }
-    &__logo h1 {
-      font-size: 28px;
-      margin-left: 10px;      
-    }
-    &__nav {
-      margin-left: 50px;
-      &:nth-child(2) li {
-        margin-right: 15px;
-      }
-    }
-    .btn-modal {
-      width: 150px;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      p {
-        margin-left: 10px;
-      }
+    &__active {
+      background-color: $color-wh;
     }
   }
-  @include media(s) {
-    img {
-      width: 20px;
-    }
-    &__logo h1 {
-      font-size: 22px;
-      margin-left: 5px;      
-    }
-    .sub-header__nav {
-      display: none;
-    }
-    .btn-modal {
-      width: 120px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      p {
-        margin-left: 5px;
-      }
-    }
+  .btn-modal {
+    @include btn-modal;
   }
 }
 // サブヘッダー
@@ -1024,7 +864,7 @@ $breakpoints: (
     justify-content: center;
   }
   &__heading {
-    color: #fff;
+    color: $color-wh;
     font-size: 34px;
   }
 
@@ -1142,7 +982,6 @@ $breakpoints: (
             padding-left: 30px;
             top: 0;
             left: 0;
-            // background-image: none;
           }      
         }
       }
@@ -1160,7 +999,13 @@ $breakpoints: (
           }
           p {
             font-size: 12px;
-            margin-top: 20px;
+            margin-top: 15px;
+            line-height: 1.3;
+          }
+          .note {
+            margin-top: 10px;
+            font-size: 12px;
+            line-height: 1.2;
           }
         }
         &:nth-child(2) {
@@ -1171,12 +1016,12 @@ $breakpoints: (
               font-size: 18px;
             }
             p {
-              margin-top: 20px;
+              margin-top: 15px;
             }
             .note {
-              margin-top: 20px;
+              margin-top: 10px;
               font-size: 12px;
-              line-height: 1.5;
+              line-height: 1.2;
             }
           }      
         }
@@ -1236,13 +1081,4 @@ $breakpoints: (
   }
 }
 // サブコンテンツ
-
-
-
-
-
-
-
-
-
 

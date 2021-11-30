@@ -2,11 +2,17 @@
 
 $(function() {
 
-  // ハンバーガー
+  // ハンバーガー サイドバー
   $(".hamburger").click(function() {
     $(this).toggleClass('hamburger__active');
+    if($('.hamburger').hasClass('hamburger__active')) {
+      $('.header__nav').show();
+      $('.sub-header__nav').show();
+    } else {
+      $('.header__nav').hide();
+      $('.sub-header__nav').hide();
+    }
   });
-
 
   // モーダル
   $('.btn-modal').click(function() {
