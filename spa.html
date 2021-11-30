@@ -46,10 +46,52 @@
         <img src="images/calender.png" alt="カレンダーアイコン">
         <p>宿泊予約</p>
       </a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- /hamburger -->
     </div>
     <!-- header__inner -->
   </header>
   <!-- /.header -->
+  
+  <div class="modal">
+    <div class="modal__inner">
+      <div class="modal__contact">
+        <div class="modal__contact__close"></div>
+        <h2 class="modal__contact__heading">宿泊予約</h2>
+        <form action="" class="form">
+          <div class="form__name">
+            <h3>お名前</h3>
+            <input type="text" placeholder=" 例：石井正悟">
+          </div>
+          <div class="form__mail">
+            <h3>メールアドレス</h3>
+            <input type="mail" placeholder="例：Example@example.com">
+          </div>
+          <div class="form__plan">
+            <h3>ご希望プラン（空いているプランのみ表示されます）</h3>
+            <select name="" id="" placeholder="プランを選択してください">
+              <option value="plan">【期間限定】海辺の四季旬彩、贅沢美味懐石プラン</option>
+              <option value="plan">平日に優雅に楽しむ、特別宿泊プラン</option>
+              <option value="plan">絶景貸切露天と個室会席を満喫できるファミリープラン</option>
+            </select>
+          </div>
+          <div class="form__date">
+            <h3>日時選択</h3>
+            <input type="text" id="flatpickr" placeholder="日時を選択してください">
+          </div>
+
+          <input type="submit" value="送信する">
+
+        </form>
+      </div>
+      <!-- /.modal__contact -->
+    </div>
+    <!-- /.modal-inner -->
+  </div>
 
   <main>
     <section class="sv spa-bg">
