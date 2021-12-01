@@ -4,19 +4,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+  <!-- Primary Meta Tags -->
   <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
   <meta name="title" content="石井花壇 | 温海温泉旅館【公式サイト】">
   <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+    
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ishi-kadan1201.web.app/">
+  <meta property="og:title" content="石井花壇 | 温海温泉旅館【公式サイト】">
+  <meta property="og:description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+  <meta property="og:image" content="">
+    
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://ishi-kadan1201.web.app/">
+  <meta property="twitter:title" content="石井花壇 | 温海温泉旅館【公式サイト】">
+  <meta property="twitter:description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+  <meta property="twitter:image" content="">
+    
   <!--- 検索結果に表示しない --->
   <meta name=“robots” content=“noindex”> 
   <!--- ファビコン --->
+  <link rel="icon" href="images/favicon.ico"> 
 
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  
+  <!-- css -->
   <link rel="stylesheet" href="sass/reset.css">
   <link rel="stylesheet" href="sass/style.css">
+
+  <!-- flatpickr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+  <!-- aos DL版-->
+  <link href="dist/css/aos.css" rel="stylesheet">
+  <script src="dist/js/aos.js"></script>
+
 </head>
 <body>
   <header class="sub-header">
@@ -107,14 +134,14 @@
         <li>温泉</li>
       </ul>
       <!-- breadcrumb -->
-      <div class="sub-contents__message">
+      <div class="sub-contents__message" data-aos="fade-up">
         <p>心も身体も癒やす汐の温泉。<br>
           湯あたりしにくく、赤ちゃんから年配の方までどなたでもゆっくりと安心して入っていただけます。<br>
           柔らかく優しい湯にじっくりと漬かれば、心身共にリラックスできます。</p>
       </div>
       <!-- sub-contents__message -->
       <div class="box ml2">
-        <div class="box__content">
+        <div class="box__content" data-aos="fade-up">
           <img src="images/onsen01.png" alt="貸し切り露天風呂イメージ">
           <div class="box__content__text ml2">
             <h2>貸し切り露天風呂「雲居の湯」</h2>
@@ -126,7 +153,7 @@
         </div>
         <!-- /.about__content -->
 
-        <div class="box__content">
+        <div class="box__content" data-aos="fade-up">
           <img src="images/onsen02.png" alt="硫酸塩泉イメージ">
           <div class="box__content__text">
             <h2>美肌を促す乳白色の硫黄泉を</h2>
@@ -140,7 +167,7 @@
         <!-- /.about__content -->
       </div>
       <!-- /about -->
-      <div class="spa-detail">
+      <div class="spa-detail" data-aos="zoom-in">
         <div class="spa-detail__inner">
           <div class="spa-detail__heading">
             <h2>温泉の効能</h2>
@@ -206,6 +233,16 @@
   </div>
 
   <script src="js/script.js"></script>
+
+  <!-- aos js -->
+  <script>
+    AOS.init({
+      disable: 'phone',  //スマートフォンのみ無効
+      offset: 250,       //動き始めまでの距離(px)
+      delay: 200,        //動き始めまでの時間(ms)
+      duration: 700      //アニメーションの時間(ms)
+    });
+  </script>
 
 </body>
 </html>

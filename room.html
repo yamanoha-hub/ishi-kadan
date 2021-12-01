@@ -4,19 +4,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
-  <meta name="title" content="石井花壇 | 温海温泉旅館【公式サイト】">
+  
+  <!-- Primary Meta Tags -->
+  <title>お部屋 - 石井花壇 | 温海温泉旅館【公式サイト】</title>
+  <meta name="title" content="お部屋 - 石井花壇 | 温海温泉旅館【公式サイト】">
   <meta name="description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="お部屋 - 石井花壇 | 温海温泉旅館【公式サイト】">
+  <meta property="og:description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+  <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="お部屋 - 石井花壇 | 温海温泉旅館【公式サイト】">
+  <meta property="twitter:description" content="日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。伝統的「和」の息づく空間で、至極のひとときをお過ごしください。">
+  <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    
   <!--- 検索結果に表示しない --->
   <meta name=“robots” content=“noindex”> 
   <!--- ファビコン --->
+  <link rel="icon" href="images/favicon.ico"> 
 
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    
+  <!-- css -->
   <link rel="stylesheet" href="sass/reset.css">
   <link rel="stylesheet" href="sass/style.css">
+
+  <!-- flatpickr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+  <!-- aos DL版-->
+  <link href="dist/css/aos.css" rel="stylesheet">
+  <script src="dist/js/aos.js"></script>
 </head>
 <body>
   <header class="sub-header">
@@ -102,21 +128,20 @@
     </section>
     <!-- /.sub-visual room-bg -->
 
-
     <div class="sub-contents">
       <ul class="breadcrumb">
         <li><a href="index.html">トップ</a>></li>
         <li>お料理</li>
       </ul>
       <!-- breadcrumb -->
-      <div class="sub-contents__message">
+      <div class="sub-contents__message" data-aos="fade-up">
         <p>創業より受け継がれてきた石井花壇の和の造り<br>
           温海の雄大な絶景を堪能していただけるように設計された客室<br>
           ゆるやかに流れ行く時間に身を委ねて</p>
       </div>
       <!-- sub-contents__message -->
       <div class="box">
-        <div class="box__content">
+        <div class="box__content" data-aos="fade-up">
           <img src="images/oheya01.png" alt="温泉付き客室イメージ">
           <div class="box__content__text">
             <h2>温泉付き客室</h2>
@@ -129,7 +154,7 @@
         </div>
         <!-- /.about__content -->
 
-        <div class="box__content">
+        <div class="box__content" data-aos="fade-up">
           <img src="images/oheya02.png" alt="庭園付き客室イメージ">
           <div class="box__content__text">
             <h2>庭園付き客室</h2>
@@ -144,7 +169,7 @@
         </div>
         <!-- /.about__content -->
 
-        <div class="box__content">
+        <div class="box__content" data-aos="fade-up">
           <img src="images/oheya03.png" alt="一般客室イメージ">
           <div class="box__content__text">
             <h2>一般客室</h2>
@@ -196,6 +221,16 @@
   </div>
 
   <script src="js/script.js"></script>
+
+  <!-- aos js -->
+  <script>
+    AOS.init({
+      disable: 'phone',  //スマートフォンのみ無効
+      offset: 250,       //動き始めまでの距離(px)
+      delay: 200,        //動き始めまでの時間(ms)
+      duration: 700      //アニメーションの時間(ms)
+    });
+  </script>
 
 </body>
 </html>
