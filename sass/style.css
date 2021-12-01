@@ -282,7 +282,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modal {
-  display: none;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -345,6 +344,17 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
 }
 
+@media screen and (max-width: 599px) {
+  .modal__contact {
+    width: 330px;
+    height: 350px;
+  }
+  .modal__contact__heading {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 .modal .form {
   width: 429px;
   -webkit-box-sizing: border-box;
@@ -385,6 +395,30 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media screen and (max-width: 1280px) {
+  .modal .form {
+    width: 310px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .modal .form input, .modal .form select {
+    height: 20px;
+  }
+  .modal .form__name, .modal .form__mail, .modal .form__plan, .modal .form__date {
+    margin-bottom: 15px;
+  }
+  .modal .form__name h3, .modal .form__mail h3, .modal .form__plan h3, .modal .form__date h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .modal .form input[type="submit"] {
+    margin-top: 30px;
+    width: 130px;
+    height: 30px;
+    font-size: 14px;
+  }
 }
 
 .mv {
@@ -838,6 +872,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 599px) {
   .plan .cards {
+    margin-top: 30px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
