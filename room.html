@@ -201,7 +201,7 @@
       </ul>
       <!-- footer__nav -->
       <div class="footer__logo">
-        <img src="/images/section-icon.png" alt="アイコン">
+        <img src="images/section-icon.png" alt="アイコン">
         <h2 class="footer__logo__ttl av180">石井花壇</h2>
       </div>
       <div class="footer__address">
@@ -221,6 +221,17 @@
   </div>
 
   <script src="js/script.js"></script>
+  <!-- flatpickr -->
+  <script>
+    flatpickr("#flatpickr", {
+    // 日本語設定
+    locale: "ja",
+    // 今日以前を選択不可
+    minDate: "today",
+    // 日付の範囲入力
+    mode: "range"
+    });
+  </script>
 
   <!-- aos js -->
   <script>

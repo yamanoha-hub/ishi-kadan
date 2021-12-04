@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  font-family: “Times New Roman”, “游明朝”, “Yu Mincho”, “游明朝体”, “YuMincho”, “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, “HiraMinProN-W3”, “HGS明朝E”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-family: 'Yu Mincho', '游明朝体', 'YuMincho', 'Times New Roman', '游明朝', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho','Noto Sans JP', sans-serif, serif;
   color: #000;
   background: #FFF;
 }
@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  display: none;
+  font-weight: 900;
   position: fixed;
   top: 0;
   width: 100%;
@@ -105,6 +105,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header__logo h1 {
+  font-family: "Toppan Bunkyu Midashi Mincho","凸版文久見出し明朝";
+  font-weight: 900;
   font-size: 32px;
   margin-left: 15px;
 }
@@ -113,13 +115,32 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 120px;
 }
 
 .header__nav__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__nav__item li {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__nav:nth-child(2) li {
@@ -256,6 +277,7 @@ h1, h2, h3, h4, h5, h6 {
           justify-content: center;
   padding-top: 19px;
   padding-bottom: 19px;
+  font-weight: 900;
 }
 
 .header .btn-modal p {
@@ -547,16 +569,33 @@ h1, h2, h3, h4, h5, h6 {
   height: 681px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding-left: 43px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .about-us__inner {
+  width: 100%;
   max-width: 1180px;
   margin-right: auto;
   margin-left: auto;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-right: 42.5px;
 }
 
 .about-us__heading {
@@ -569,15 +608,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 33px;
 }
 
-.about-us__text {
+.about-us__text__item {
   margin-top: 85px;
   margin-right: 118px;
   margin-left: 118px;
   letter-spacing: 6px;
   text-orientation: upright;
+  -webkit-text-orientation: upright;
 }
 
-.about-us__text > p:nth-child(2) {
+.about-us__text__item p {
+  margin-right: 22px;
+  margin-left: 22px;
+}
+
+.about-us .about-us__text__item:nth-child(2) {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.about-us .about-us__text__item:nth-child(2) > p {
   margin-right: 22px;
   margin-left: 22px;
 }
@@ -598,20 +648,28 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
             writing-mode: horizontal-tb;
+    padding-right: 0;
   }
   .about-us__inner h2:nth-child(2) {
     margin-top: 30px;
     margin-right: 0;
   }
-  .about-us__text {
+  .about-us__text__item {
     margin-top: 60px;
     margin-left: 80px;
     margin-right: 0;
     line-height: 1.5;
   }
-  .about-us__text > p:nth-child(2) {
+  .about-us__text__item p {
     margin-right: 0px;
     margin-left: 0px;
+  }
+  .about-us .about-us__text__item:nth-child(2) {
+    margin-left: 80px;
+  }
+  .about-us .about-us__text__item:nth-child(2) > p {
+    margin-right: 0;
+    margin-left: 0;
   }
   .about-us__site-ttl {
     margin-top: 90px;
@@ -639,10 +697,13 @@ h1, h2, h3, h4, h5, h6 {
   .about-us__heading h2:nth-child(2) {
     margin-top: 10px;
   }
-  .about-us__text {
+  .about-us__text__item {
     margin-top: 40px;
     margin-left: 20px;
     letter-spacing: 4px;
+  }
+  .about-us .about-us__text__item:nth-child(2) {
+    margin-left: 20px;
   }
   .about-us__site-ttl {
     margin-top: 70px;
@@ -655,15 +716,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .media-contents__inner {
+  width: 100%;
   max-width: 1920px;
   margin-right: auto;
   margin-left: auto;
 }
 
+@media screen and (max-width: 1280px) {
+  .media-contents {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
 @media screen and (max-width: 599px) {
   .media-contents {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 
@@ -745,62 +814,85 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 1280px) {
   .media {
-    height: auto;
+    width: 100%;
+    height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     position: relative;
+    top: 0;
+    left: 0;
   }
   .media img {
-    position: relative;
-    margin-right: 5px;
-    margin-left: 5px;
     max-width: 100%;
     height: 500px;
   }
-  .media .media__body {
-    margin-left: 50px;
+  .media__body {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 50px;
     position: absolute;
+    top: 0;
+    left: 0;
     color: #fff;
     text-shadow: 1px 2px 3px #000;
   }
-  .media .media__body .btn {
+  .media__body .btn {
     margin-top: 50px;
     color: #fff;
     width: 200px;
     border: solid 1px #fff;
   }
   .media:nth-child(2) {
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   .media:nth-child(2) img {
     max-width: 100%;
+    height: 500px;
   }
   .media:nth-child(2) .media__body {
     margin-right: 0;
-    margin-left: 50px;
-    position: absolute;
+    margin-left: 0;
   }
 }
 
 @media screen and (max-width: 599px) {
-  .media .media__body {
-    margin-left: 20px;
+  .media img {
+    height: 300px;
   }
-  .media .media__body__ttl {
-    font-size: 28px;
+  .media__body {
+    padding-left: 10px;
+  }
+  .media__body__ttl {
+    font-size: 26px;
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+  .media__body__text {
+    margin-top: 20px;
+    line-height: 1.3;
+  }
+  .media__body .btn {
+    margin-top: 20px;
+    width: 160px;
   }
   .media:nth-child(2) {
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  .media:nth-child(2) .media__body {
-    margin-left: 20px;
+  .media:nth-child(2) img {
+    height: 300px;
+  }
+  .media:nth-child(2) .btn {
+    margin-top: 20px;
+    width: 160px;
   }
 }
 
@@ -873,6 +965,9 @@ h1, h2, h3, h4, h5, h6 {
   .plan .cards__item {
     margin-top: 30px;
   }
+  .plan .cards__item img {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -940,6 +1035,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .news__contents {
+  width: 100%;
   margin-top: 49px;
   max-width: 1186px;
   display: -webkit-box;
@@ -974,7 +1070,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 30px;
 }
 
-.news__contents__item p {
+.news__contents__item-text p {
   margin-top: 10px;
   font-size: 16px;
   line-height: 2;
@@ -994,11 +1090,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 599px) {
+  .news__contents {
+    max-width: 340px;
+  }
   .news__contents__item {
     position: relative;
-    padding-top: 0;
-    padding-left: 0;
-    padding-bottom: 0;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
   }
   .news__contents__item img {
     width: 100%;
@@ -1009,8 +1109,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .news__contents__item-text {
     position: absolute;
-    padding-top: 5px;
-    padding-right: 10px;
+    top: 0;
+    left: 0;
+    padding-top: 10px;
     padding-left: 10px;
     color: #fff;
     text-shadow: 1px 2px 3px #000;
@@ -1068,6 +1169,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .access__content__text {
+  width: 100%;
   margin-left: 83px;
   padding-top: 12px;
   font-size: 16px;
@@ -1075,12 +1177,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .access__content__text span {
-  font-weight: bold;
+  font-weight: 900;
   margin-bottom: 8px;
 }
 
 .access__content__text p {
   margin-bottom: 8px;
+}
+
+@media screen and (max-width: 1280px) {
+  .access__content {
+    width: 600px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .access__content img {
+    width: 600px;
+    max-width: 100%;
+  }
+  .access__content__text {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .access__content {
+    width: 340px;
+  }
+  .access__content img {
+    width: 340px;
+  }
 }
 
 .access .google-map {
@@ -1097,29 +1232,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 599px) {
   .access .google-map {
-    width: 340px;
-    height: 340px;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .access__inner {
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-  .access__content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-  .access__content img {
     width: 100%;
-  }
-  .access__content__text {
-    margin-left: 0;
+    max-width: 340px;
+    height: 100%;
+    max-height: 340px;
   }
 }
 
@@ -1170,6 +1286,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer__logo__ttl {
+  font-family: "Toppan Bunkyu Midashi Mincho","凸版文久見出し明朝";
+  font-weight: 900;
   font-size: 32px;
   margin-top: 20px;
 }
@@ -1226,7 +1344,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-header {
-  display: none;
+  font-weight: 900;
   position: fixed;
   top: 0;
   width: 100%;
@@ -1259,6 +1377,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-header__logo h1 {
+  font-family: "Toppan Bunkyu Midashi Mincho","凸版文久見出し明朝";
+  font-weight: 900;
   font-size: 32px;
   margin-left: 15px;
 }
@@ -1267,13 +1387,32 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 120px;
 }
 
 .sub-header__nav__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sub-header__nav__item li {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .sub-header__nav:nth-child(2) li {
@@ -1468,6 +1607,7 @@ h1, h2, h3, h4, h5, h6 {
 .sv__heading {
   color: #fff;
   font-size: 34px;
+  font-weight: 900;
 }
 
 @media screen and (max-width: 1280px) {
@@ -1560,10 +1700,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
-          justify-content: end;
+          justify-content: flex-end;
 }
 
 .sub-contents .box__content:nth-child(2) .box__content__text {
+  text-align: left;
   padding-left: 60px;
   display: inline-block;
   left: 0;

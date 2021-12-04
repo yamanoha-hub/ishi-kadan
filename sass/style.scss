@@ -4,7 +4,7 @@
 // ベース
 // ============================================
 body {
-  font-family: “Times New Roman”, “游明朝”, “Yu Mincho”, “游明朝体”, “YuMincho”, “ヒラギノ明朝 Pro W3”, “Hiragino Mincho Pro”, “HiraMinProN-W3”, “HGS明朝E”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-family:'Yu Mincho', '游明朝体', 'YuMincho', 'Times New Roman', '游明朝', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho','Noto Sans JP', sans-serif, serif;
   color: #000;
   background:#FFF;
 }
@@ -71,9 +71,6 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
-
-
-
 // ========================================================================
 // 変数
 // ========================================================================
@@ -98,7 +95,7 @@ $breakpoints: (
 
 // 表示崩れ見るため
 // * {
-  // outline: 2px solid blue;
+//   outline: 2px solid blue;
 // }
 
 
@@ -119,6 +116,7 @@ $breakpoints: (
   }
   .btn-modal {
     @include btn-modal;
+    font-weight: 900;
   }
 }
 // ヘッダー
@@ -216,12 +214,18 @@ $breakpoints: (
   background-image: url(../images/bg.png);
   height: 681px;
   box-sizing: border-box;
-  padding-left: 43px;
-  &__inner {
+  display: flex;
+  align-items: center;
+  &__inner { //530.5
+    width: 100%;
     max-width: 1180px;
     margin-right: auto;
     margin-left: auto;
     writing-mode: vertical-rl;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 42.5px;
   }
   &__heading {
     font-size: 28px;
@@ -232,16 +236,25 @@ $breakpoints: (
     }
   }
 
-  &__text {
+  &__text__item {
     margin-top: 85px;
     margin-right: 118px;
     margin-left: 118px;
     letter-spacing: 6px;
     text-orientation: upright;
-    &>p:nth-child(2) {
+    -webkit-text-orientation: upright;
+    p {
       margin-right: 22px;
       margin-left: 22px;
     }
+  }
+  .about-us__text__item:nth-child(2) {
+      margin-right: 0;
+      margin-left: 0;
+      &>p {
+        margin-right: 22px;
+        margin-left: 22px;
+      }
   }
   &__site-ttl {
     margin-top: 379px;
@@ -255,19 +268,27 @@ $breakpoints: (
     &__inner {
       max-width: 600px;
       writing-mode: horizontal-tb;
+      padding-right: 0;
       h2:nth-child(2) {
         margin-top: 30px;
         margin-right: 0;
       }
     }
-    &__text {
+    &__text__item {
       margin-top: 60px;
       margin-left: 80px;
       margin-right: 0;
       line-height: 1.5;
-      &>p:nth-child(2) {
+      p {
         margin-right: 0px;
         margin-left: 0px;
+      }
+    }
+    .about-us__text__item:nth-child(2) {
+      margin-left: 80px;
+      &>p {
+        margin-right: 0;
+        margin-left: 0;
       }
     }
     &__site-ttl {
@@ -289,10 +310,13 @@ $breakpoints: (
         margin-top: 10px;
       }
     }
-    &__text {
+    &__text__item {
       margin-top: 40px;
       margin-left: 20px;
       letter-spacing: 4px;
+    }
+    .about-us__text__item:nth-child(2) {
+      margin-left: 20px;
     }
     &__site-ttl {
       margin-top: 70px;
@@ -307,14 +331,19 @@ $breakpoints: (
   padding-top: 106px;
   padding-bottom: 78px;
   &__inner {
+    width: 100%;
     max-width: 1920px;
     margin-right: auto;
     margin-left: auto;
   }
 
+  @include media(m) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   @include media(s) {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 
@@ -377,19 +406,23 @@ $breakpoints: (
   }
 
   @include media(m) {
-    height: auto;
+    width: 100%;
+    height: 100%;
     flex-direction: column;
     position: relative;
+    top: 0;
+    left: 0;
     img {
-      position: relative;
-      margin-right: 5px;
-      margin-left: 5px;
       max-width: 100%;
       height: 500px;
     }
-    .media__body {
-      margin-left: 50px;
+    &__body {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 50px;
       position: absolute;
+      top: 0;
+      left: 0;
       color: $color-wh;
       text-shadow: 1px 2px 3px #000;
       .btn {
@@ -400,32 +433,49 @@ $breakpoints: (
       }
     }
     &:nth-child(2) {
+      width: 100%;
       flex-direction: column;
-      position: relative;
+      margin-top: 50px;
+      margin-bottom: 50px;
       img {
         max-width: 100%;
+        height: 500px;
       }
       .media__body {
         margin-right: 0;
-        margin-left: 50px;
-        position: absolute;
+        margin-left: 0;
       }
     }
   } 
-
   @include media(s) {
-    .media__body {
-      margin-left: 20px;
+    img {
+      height: 300px;
+    }
+    &__body {
+      padding-left: 10px;
       &__ttl {
-        font-size: 28px;
+        font-size: 26px;
+        margin-top: 10px;
+        line-height: 1.3;
+      }
+      &__text {
+        margin-top: 20px;
+        line-height: 1.3;
+      }
+      .btn {
+        margin-top: 20px;
+        width: 160px;
       }
     }
-
     &:nth-child(2) {
       margin-top: 30px;
       margin-bottom: 30px;
-      .media__body { 
-        margin-left: 20px;
+      img {
+        height: 300px;
+      }
+      .btn {
+        margin-top: 20px;
+        width: 160px;
       }
     }
   }
@@ -478,6 +528,9 @@ $breakpoints: (
       flex-wrap: wrap;
       &__item {
         margin-top: 30px;
+        img {
+          max-width: 100%;
+        }
       }
     }
   }
@@ -523,6 +576,7 @@ $breakpoints: (
   }
 
   &__contents {
+    width: 100%;
     margin-top: 49px;
     max-width: 1186px;
     display: flex;
@@ -544,7 +598,7 @@ $breakpoints: (
       img {
         margin-right: 30px;
       }
-      p {
+      &-text p {
         margin-top: 10px;
         font-size: 16px;
         line-height: 2;
@@ -561,11 +615,16 @@ $breakpoints: (
     }
 
     @include media(s) {
+      max-width: 340px;
       &__item {
         position: relative;
-        padding-top: 0;
-        padding-left: 0;
-        padding-bottom: 0;
+        top: 0;
+        left: 0;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.0);
+        // margin-top: 0;
+        // margin-right: 0;
+        // margin-left: 0;
         img {
           width: 100%;
           max-height: 130px;
@@ -574,8 +633,9 @@ $breakpoints: (
         }
         &-text {
           position: absolute;
-          padding-top: 5px;
-          padding-right: 10px;
+          top: 0;
+          left: 0;
+          padding-top: 10px;
           padding-left: 10px;
           color: $color-wh;
           text-shadow: 1px 2px 3px #000;
@@ -610,20 +670,42 @@ $breakpoints: (
     justify-content: center;
 
     &__text {
+      width: 100%;
       margin-left: 83px;
       padding-top: 20px - 8px;
       font-size: 16px;
       line-height: 2;
       span {
-        font-weight: bold;
+        font-weight: 900;
         margin-bottom: 8px;
       }
       p {
         margin-bottom: 8px;
       }
     }
+    @include media(m) {
+      width: 600px;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      padding-left: 0;
+      padding-right: 0;
+      img {
+        width: 600px;
+        max-width: 100%;
+      }
+      &__text {
+        margin-left: 0;
+      }
+    }
+    @include media(s) {
+      width: 340px;
+      img {
+        width: 340px;
+      }
+    }
   }
-
   .google-map {
     padding-right: 4px;
 
@@ -633,27 +715,10 @@ $breakpoints: (
       height: 400px;
     }
     @include media(s) {
-      width: 340px;
-      height: 340px;
-    }
-  }
-
-
-  @include media(m) {
-    &__inner {
-      padding-right: 5px;
-      padding-left: 5px;
-    }
-    &__content {
-      flex-direction: column;
-      margin-top: 60px;
-      margin-bottom: 60px;
-      img {
-        width: 100%;
-      }
-      &__text {
-        margin-left: 0;
-      }
+      width: 100%;
+      max-width: 340px;
+      height: 100%;
+      max-height: 340px;
     }
   }
 }
@@ -694,6 +759,8 @@ $breakpoints: (
     text-align: center;
     margin-top: 82px;
     &__ttl {
+      font-family: "Toppan Bunkyu Midashi Mincho","凸版文久見出し明朝";
+      font-weight: 900;
       font-size: 32px;
       margin-top: 20px;
     }
@@ -783,6 +850,7 @@ $breakpoints: (
   &__heading {
     color: $color-wh;
     font-size: 34px;
+    font-weight: 900;
   }
 
   @include media(m) {
@@ -861,8 +929,9 @@ $breakpoints: (
 
       &:nth-child(2) {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         .box__content__text {
+          text-align: left;
           padding-left: 60px;
           display: inline-block;
           left: 0;

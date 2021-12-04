@@ -36,6 +36,10 @@
   <link rel="stylesheet" href="sass/reset.css">
   <link rel="stylesheet" href="sass/style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
   <!-- flatpickr CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -165,32 +169,30 @@
           <h2>美しさに癒やされて</h2>
         </div>
         <!-- about-us__heading -->
-
         <div class="about-us__text">
-          <p>東北の奥座敷である温海温泉郷</p>
-          <p>開湯は約1300年前とされ、役小角が</p>
-          <p>発見したと伝えられます</p>
+          <div class="about-us__text__item">
+            <p>東北の奥座敷である温海温泉郷</p>
+            <p>開湯は約1300年前とされ、役小角が</p>
+            <p>発見したと伝えられます</p>
+          </div>
+          <!-- /.about-us__text -->
+          <div class="about-us__text__item">
+            <p>石井花壇は江戸より続く由緒ある旅館で</p>
+            <p>クラシックな作りの中に大正ロマンあふれる</p>
+            <p>内装を残しております</p>
+          </div>
+          <!-- /.about-us__text -->
+          <div class="about-us__text__item">
+            <p>圧倒的癒やしの空間で</p>
+            <p>頑張る現代人に</p>
+            <p>頑張らない圧倒的な非日常をご提供します</p>
+          </div>
+          <!-- /.about-us__text -->
         </div>
-        <!-- /.about-us__text -->
-
-        <div class="about-us__text">
-          <p>石井花壇は江戸より続く由緒ある旅館で</p>
-          <p>クラシックな作りの中に大正ロマンあふれる</p>
-          <p>内装を残しております</p>
-        </div>
-        <!-- /.about-us__text -->
-
-        <div class="about-us__text">
-          <p>圧倒的癒やしの空間で</p>
-          <p>頑張る現代人に</p>
-          <p>頑張らない圧倒的な非日常をご提供します</p>
-        </div>
-        <!-- /.about-us__text -->
-
+        <!-- /.about-us__text__item -->
         <div class="about-us__site-ttl">
           <span>石井花壇</span>
         </div>
-
       </div>
       <!-- /.about-us__inner -->
     </section>
@@ -412,7 +414,7 @@
       </ul>
       <!-- footer__nav -->
       <div class="footer__logo">
-        <img src="/images/section-icon.png" alt="アイコン">
+        <img src="images/section-icon.png" alt="アイコン">
         <h2 class="footer__logo__ttl av180">石井花壇</h2>
       </div>
       <div class="footer__address">
@@ -435,15 +437,16 @@
 
   <!-- flatpickr -->
   <script>
-    flatpickr("#flatpickr", {
+    $("#flatpickr").flatpickr({
+    // flatpickr("#flatpickr", {
+    // 日本語設定
     locale: "ja",
+    // 今日以前を選択不可
     minDate: "today",
-    mode: "multiple",
-    dateFormat: "Y-m-d",
-    conjunction: " :: "
+    // 日付の範囲入力
+    mode: "range"
     });
   </script>
-
 
   <!-- swiper js -->
   <script>
