@@ -4,7 +4,7 @@
 // ベース
 // ============================================
 body {
-  font-family:'Yu Mincho', '游明朝体', 'YuMincho', 'Times New Roman', '游明朝', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'ＭＳ Ｐ明朝', 'MS PMincho','Noto Sans JP', sans-serif, serif;
+  font-family:'Yu Mincho', '游明朝体', 'YuMincho', 'Times New Roman', '游明朝', 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E', 'MS P明朝', 'MS PMincho','Noto Sans JP', sans-serif, serif;
   color: #000;
   background:#FFF;
 }
@@ -70,10 +70,14 @@ h1,h2,h3,h4,h5,h6 {
   display: block;
 }
 
+.header-show {
+  display: none;
+}
 
-// ========================================================================
+
+// =============================================
 // 変数
-// ========================================================================
+// =============================================
 $font-Color: #000;
 $color-wh: #fff;
 
@@ -92,7 +96,6 @@ $breakpoints: (
   }
 }
 
-
 // 表示崩れ見るため
 // * {
 //   outline: 2px solid blue;
@@ -102,6 +105,8 @@ $breakpoints: (
 // ヘッダー
 .header {
   @include header;
+  position: absolute;
+  top: 0;
   &__logo h1 {
     color: $color-wh;
   }
@@ -120,7 +125,6 @@ $breakpoints: (
   }
 }
 // ヘッダー
-
 
 // モーダル
 .modal {
@@ -176,18 +180,23 @@ $breakpoints: (
 }
 .swiper {
   width: 100%;
-  max-width: 1920px;
+  max-width: 100vw;
   height: 1079px;
   &-slide {
-    width: 100%;
-    max-width: auto;
-
     display: flex;
     justify-content: center;
     align-items: center;
   }
   img {
     display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+  @include media(l) {
+    max-width: 1920px;
+    img {
+      width: auto;
+    }
   }
   @include media(m) {
     height: 800px;
@@ -806,10 +815,11 @@ $breakpoints: (
 // フッター
 
 
-
 // サブヘッダー
 .sub-header {
   @include header;
+  position: fixed;
+  top: 0;
   background-color: $color-wh;
   &__logo h1 {
     color: $font-Color;

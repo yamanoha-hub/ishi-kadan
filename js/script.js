@@ -27,14 +27,14 @@ $(function() {
 
   // ヘッダー表示
   $(window).scroll(function () {
-    // .mv__textの高さを取得してheader_showに代入
-    var Header_show = $('#header-show').offset();
+    // ID(#header-show)指定した高さを取得してheader_showに代入
+    var Header_show = $('#header-show-point').offset();
 
     // header_showより、スクロールされていたら
-    if ($(this).scrollTop() > Header_show.top) {
-      $('header').fadeIn();
+    if($(this).scrollTop() > Header_show.top) {
+      $('.header-show').slideDown();
     } else {
-      $('header').fadeOut(); 
+      $('.header-show').slideUp();
     }
   });
 
