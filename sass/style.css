@@ -310,6 +310,7 @@ h1, h2, h3, h4, h5, h6 {
 .modal {
   display: none;
   position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.3);
@@ -377,6 +378,9 @@ h1, h2, h3, h4, h5, h6 {
     height: auto;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+  .modal__contact__inner {
+    padding-top: 0;
   }
 }
 
@@ -562,6 +566,9 @@ h1, h2, h3, h4, h5, h6 {
 .about-us {
   padding-top: 64px;
   background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 681px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1118,6 +1125,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 60px;
   padding-bottom: 60px;
   background-image: url(../images/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .access__inner {
@@ -1237,6 +1247,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer__bg {
   background-image: url(../images/footer-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .footer__inner {
@@ -1581,7 +1594,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sv {
-  max-width: 1920px;
+  margin-top: 80px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1607,6 +1620,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 1280px) {
+  .sv {
+    margin-top: 60px;
+  }
   .sv__inner {
     height: 350px;
   }

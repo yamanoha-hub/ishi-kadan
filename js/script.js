@@ -24,14 +24,15 @@ $(function() {
     return false;
   });
 
-
   // ヘッダー表示
   $(window).scroll(function () {
     // ID(#header-show)指定した高さを取得してheader_showに代入
-    var Header_show = $('#header-show-point').offset();
+    if ($('#header-show-point').length) {
+      var Header_show = $('#header-show-point').offset().top;
+    }
 
     // header_showより、スクロールされていたら
-    if($(this).scrollTop() > Header_show.top) {
+    if($(this).scrollTop() > Header_show) {
       $('.header-show').slideDown();
     } else {
       $('.header-show').slideUp();
